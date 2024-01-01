@@ -1,47 +1,42 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+    import Component from "./lib/Component.svelte";
+
+    import { month, today, progress } from "./lib/date.js";
+
+    let filledSquares = (progress * 365) / 100;
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+<h1 class="center">Year Progress tracker</h1>
 
-  <div class="card">
-    <Counter />
-  </div>
+<Component title="Year Progress">
+    <div class="container">
+        <div class="left-text extra">January 1</div>
+        <div class="right-text extra">December 31</div>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" style="width: {progress}%;"></div>
+    </div>
+    <div class="container">
+        <div class="left-text extra">0%</div>
+        <div class="right-text extra">100%</div>
+    </div>
+</Component>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
+<Component title="Current Date">
+    <div class="center extra">
+        {month[today.getMonth()]}
+        {today.getDate()}, {today.getFullYear()}
+    </div>
+</Component>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
-
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
+<Component title="Daily Progress">
+    <div class="squares">
+        {#each Array(365) as _, rowIndex}
+            {#if rowIndex < filledSquares}
+                <div class="square filled"></div>
+            {:else}
+                <div class="square"></div>
+            {/if}
+        {/each}
+    </div>
+</Component>
