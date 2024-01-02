@@ -14,7 +14,7 @@
         <div class="right-text extra">December 31</div>
     </div>
     <div class="progress-bar">
-        <div class="progress-fill" style="width: {progress}%;"></div>
+        <div class="progress-fill" style="width: {progress * 100}%;"></div>
     </div>
     <div class="container">
         <div class="left-text extra">0%</div>
