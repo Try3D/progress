@@ -3,7 +3,7 @@
 
     import { month, today, progress } from "./lib/date.js";
 
-    let filledSquares = (progress * 365) / 100;
+    let filledSquares = Math.floor(progress * 365);
 </script>
 
 <h1 class="center">Year Progress tracker</h1>
