@@ -1,63 +1,67 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
 body {
-    background-color: $white;
-    font-family: Geist Mono;
+  background-color: $white;
+  font-family:
+    Geist Mono,
+    monospace;
 }
 
 .box-shadow {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .left-text {
-    text-align: left;
+  text-align: left;
 }
 
 .right-text {
-    text-align: right;
+  text-align: right;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .progress-bar {
-    display: flex;
-    height: 20px;
-    background-color: $background;
-    border-radius: 4px;
-    margin: 10px;
-    overflow: hidden;
+  display: flex;
+  height: 20px;
+  background-color: $background;
+  border-radius: 4px;
+  margin: 10px;
+  overflow: hidden;
 }
 
 .progress-fill {
-    background-color: $primary;
-    height: 100%;
+  background-color: $primary;
+  height: 100%;
 }
 
 .squares {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
 }
 
 .square {
-    width: 10px;
-    height: 10px;
-    margin: 2px;
-    border-radius: 2px;
-    background-color: $background;
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  border-radius: 2px;
+  background-color: $background;
 }
 
 .filled {
-    background-color: $primary;
+  background-color: $primary;
 }
 
 .extra {
-    color: $grey;
-    padding: 10px;
+  color: $grey;
+  padding: 10px;
 }
